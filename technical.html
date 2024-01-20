@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C langauge documentation</title>
+    <link rel="stylesheet" href="technical.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>C documentation</header>
+        <ul>
+            <li><a href="#Operators" class="nav-link">Operators</a></li>
+            <li><a href="#Control_structures" class="nav-link">Control structures</a></li>
+            <li><a href="#Functions" class="nav-link">Functions</a></li>
+            <li><a href="#Arrays" class="nav-link">Arrays</a></li>
+            <li><a href="#Pointers" class="nav-link">Pointers</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Operators">
+            <header>Operators</header>
+            <p>Operators are used for mathematical and logical calculations</p>
+            <h4>Types of operators</h4>
+            <ol>
+                <li>Arithmetic Operators</li>
+                <p>The purpose of this operator is to perform mathematical operations like addition, 
+                    subtraction, division, multiplication etc.
+                    </p>
+                <li>Increment Operator</li>
+                <p>Mainly used for incrementing the value of an integer. It is represented by the ‘++’ 
+                    operator. ++x will increase the value of the variable x instantly.</p>
+                <li>Decrement Operator</li>
+                <p>Mainly used for decrementing the value of an integer. It is represented by the ‘–’ 
+                    operator. -x will decrease the value of the variable x instantly.</p>
+                <li>Assignment Operator</li>
+                <p>This operator is used to assign value to a variable</p>
+                <li>Logical Operator</li>
+                <p>Logical operator is used in decision making statements where it returns a 0 for false and 1 for true</p>
+                <pre>
+                    Operator        What it does
+                 && (Logical AND) True only if all conditions satisfy.
+                 || (Logical OR) True only if either one condition satisfies.
+                 ! (Logical Not) True only if the operand is 0.
+                </pre>
+                <li>Conditional Operator</li>
+                <p>Also known as Ternary operator and it is also used in decision making statements</p>
+                <p>Example of Arithmetic Operator</p>
+                <pre>
+                    <code>
+                        #include <stdio.h>
+                            main()
+                            {
+                            int i = 17;
+                            char c = 'c'; /* ascii value is 99 */
+                            float sum;
+                            sum = i + c;
+                            printf("Value of sum : %f\n", sum );
+                            }
+                    </code>
+                </pre>
+            </ol>
+        </section>
+        <section class="main-section" id="Control_structures">
+            <header>Control structures</header>
+            <p>Control structures are boolean expression to evaluate block of statements whether 
+                they are True or False based on condition</p>
+                <h2>Types of control structures</h2>
+                <ol>
+                    <li>Decision making statement</li>
+                    <ul>
+                        <li>If statement</li>
+                        <p>Example</p>
+                        <pre>
+                            <code>
+                                     if(number%2==0){ 
+                                     printf("%d is even number",number); 
+                                     }
+                            </code>
+                        </pre>
+                        <li>If…else Statement</li>
+                        <li>Nested if-else statement</li>
+                        <li> else – if Ladder</li>
+                        <li>switch statement</li>
+                    </ul>
+                    <li>Loop control statements</li>
+                    <ul>
+                        <li>for loop</li>
+                        <li>while loop</li>
+                        <li>do-while loop</li>
+                    </ul>
+                </ol>
+        </section>
+        <section class="main-section" id="Functions">
+            <header>Functions</header>
+            <h2>Type of function</h2>
+                <ol>
+                    <li><strong>Library functions</strong> are those functions which are already defined in C library, 
+                        example printf(), scanf(), strcat() et</li>
+                    <li> <strong>A User-defined functions</strong> These functions are made for code reusability and for 
+                        saving time and space</li>
+                </ol>
+            <p>Example of function</p>
+            <pre>
+                <code>
+                    #include <stdio.h>
+                        /* function declaration */
+                        int max(int num1, int num2);
+                        int main ()
+                        {
+                        /* local variable definition */
+                        int a = 100;
+                        int b = 200;
+                        int ret;
+                        /* calling a function to get max value */
+                        ret = max(a, b);
+                        printf( "Max value is : %d\n", ret );
+                        return 0;
+                        }
+                        /* function returning the max between two numbers */
+                        int max(int num1, int num2)
+                        {
+                        /* local variable declaration */
+                        int result;
+                        if (num1 > num2)
+                        result = num1;
+                        else
+                        result = num2;
+                        return result;}
+            </code></pre>
+        </section>
+        <section class="main-section" id="Arrays">
+            <header>Arrays</header>
+            <p>An array is defined as the collection of similar type of data items stored at 
+                contiguous memory locations</p>
+                <h3>Declaring,Intializing and printing an array</h3>
+                <pre>
+                    <code>
+                        #include<stdio.h> 
+                            int main(){ 
+                            int i=0; 
+                            int marks[5]={20,30,40,50,60};//declaration and initialization of array 
+                            //traversal of array 
+                            C programming Arrays Notes
+                            for(i=0;i<5;i++){ 
+                            printf("%d \n",marks[i]);
+                            } 
+                            return 0; 
+                        }
+                    </code>
+                </pre>
+                <h3>Types of arrays</h3>
+                <ol>
+                    <li>Single dimensional array</li>
+                    <p>Consist one level and it's called <strong>1D array</strong></p>
+                    <li>Multidimensional Arrays</li>
+                    <p>Consists more than one level,these are <strong>2D array</strong> and <strong>3D array</strong></p>
+                </ol>
+        </section>
+        <section class="main-section" id="Pointers">
+            <header>Pointers</header>
+            <p>A pointer is variable which stores the address of another 
+                variable.</p>
+                <h3>Incremeting and storing a pointer</h3>
+                <pre>
+                    <code>
+                        #include<stdio.h> 
+                            int main(){ 
+                            int number=50; 
+                            int *p;//pointer to int 
+                            p=&number;//stores the address of number variable 
+                            printf("Address of p variable is %u \n",p); 
+                            p=p+1; 
+                            printf("After increment: Address of p variable is %u \n",p); // in our case, p will get 
+                            incremented by 4 bytes. 
+                            return 0; 
+                            }
+                    </code>
+                </pre>
+        </section>
+    </main>
+</body>
+</html>
